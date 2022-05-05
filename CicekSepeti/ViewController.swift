@@ -63,8 +63,10 @@ class ViewController: UIViewController {
         
         let tc = TableViewData(image: "vazo2", title: "Paşabahçe Vazoda Tatlı Bahar", price: "94,99 TL", payment: "27,78 TL")
         let tc2 = TableViewData(image: "vazo1", title: "Paşabahçe Vazoda Kırmızı Gül", price: "109,00 TL", payment: "31,88 TL")
+        let tc3 = TableViewData(image: "vazo3", title: "Paşabahçe Vazoda Düş Prensesi", price: "109,00 TL", payment: "31,88 TL")
         tableList.append(tc)
         tableList.append(tc2)
+        tableList.append(tc3)
         
         let tasarim = UICollectionViewFlowLayout()
         tasarim.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -122,7 +124,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.paymentLabel.textColor = UIColor(red: 0.2392, green: 0.7137, blue: 0.2353, alpha: 1.0)
         
         cell.tableImage.image = UIImage(named: tc.image!)
-        //cell.starImage.image = UIImage(named: "star")
+        cell.heartImage.layer.borderColor = UIColor.gray.cgColor
+        cell.heartImage.layer.borderWidth = 0.5
+        cell.heartImage.layer.cornerRadius = 5
+        cell.heartImage.image = cell.heartImage.image?.withRenderingMode(.alwaysTemplate)
+        cell.heartImage.tintColor = .red
+        cell.numberLabel.textColor = UIColor(red: 0.1059, green: 0.2627, blue: 0.2824, alpha: 1.0)
+        
+        if indexPath.row == 1 {
+            cell.starImage.image = UIImage(named: "bos-yıldız")
+        }
+        else {
+            cell.starImage.image = UIImage(named: "star")
+        }
         
         return cell
     }

@@ -15,7 +15,9 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var paymentLabel: UILabel!
-    //@IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var heartImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
